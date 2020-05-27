@@ -14,19 +14,12 @@ public class CustemProtolRouterManager {
         this.current = first;
     }
 
-    public CustemProtolRouterManager addActivityImpl(Context context) {
-        RouterExecuterInter impl = new ActivityImpl(context);
+    public CustemProtolRouterManager addImpl(RouterExecuterInter impl) {
         this.current.setNext(impl);
         this.current = impl;
         return this;
     }
 
-    public CustemProtolRouterManager addWebImpl(Context context) {
-        RouterExecuterInter impl = new WebImpl(context);
-        this.current.setNext(impl);
-        this.current = impl;
-        return this;
-    }
 
     public void start(String protol) {
         this.first.route(protol);
