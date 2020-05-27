@@ -1,4 +1,4 @@
-package ly.learn;
+package ly.learn.designpattern;
 
 import android.app.Application;
 import android.content.Context;

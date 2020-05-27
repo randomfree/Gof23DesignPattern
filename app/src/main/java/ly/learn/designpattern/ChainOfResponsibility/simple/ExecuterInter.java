@@ -1,4 +1,4 @@
-package ly.learn.ChainOfResponsibility.simple;
+package ly.learn.designpattern.ChainOfResponsibility.simple;
 
 public abstract class ExecuterInter<T extends RequestInter>{
     private ExecuterInter next;

@@ -1,4 +1,4 @@
-package ly.learn.ChainOfResponsibility.simple;
+package ly.learn.designpattern.ChainOfResponsibility.simple;
 
 public class RequestInter {
     int num;

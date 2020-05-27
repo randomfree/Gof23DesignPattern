@@ -1,5 +1,7 @@
 package ly.learn.ChainOfResponsibility.protolRouter;
 
+import android.content.Context;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,6 +14,9 @@ import org.robolectric.shadows.ShadowLog;
 
 import static org.mockito.Mockito.*;
 
+import ly.learn.designpattern.ChainOfResponsibility.protolRouter.ActivityImpl;
+import ly.learn.designpattern.ChainOfResponsibility.protolRouter.CustemProtolRouterManager;
+import ly.learn.designpattern.ChainOfResponsibility.protolRouter.WebImpl;
 import ly.learn.designpattern.MainActivity;
 
 import static org.junit.Assert.*;
@@ -47,7 +52,7 @@ public class CustemProtolRouterManagerTest {
         new CustemProtolRouterManager(mockActivityImpl).addImpl(mockWebImpl).start("web");
 
         verify(mockActivityImpl).handleRequest("web");
-        verify(mockActivityImpl).goNext("web");
+        verify(mockActivityImpl,never()).goActivity(anyString(),any(Context.class));
 
         verify(mockWebImpl).handleRequest("web");
         verify(mockWebImpl).goWebActivity("web");
