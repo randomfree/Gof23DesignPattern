@@ -1,11 +1,19 @@
-package ChainOfResponsibility.protolRouter;
+package ly.learn.ChainOfResponsibility.protolRouter;
+
+import android.util.Log;
+
+import java.util.logging.Logger;
 
 public abstract class RouterExecuterInter {
     private RouterExecuterInter next;
 
-    public abstract void handleRequest(String protol);
+    protected abstract boolean handleRequest(String protol);
 
-    public abstract void jump(String protol);
+    public void route(String protol) {
+        if (!handleRequest(protol)) {
+            goNext(protol);
+        }
+    }
 
     public RouterExecuterInter getNext() {
         return next;
@@ -21,7 +29,9 @@ public abstract class RouterExecuterInter {
 
     protected void goNext(String protol) {
         if (next != null) {
-            next.handleRequest(protol);
+            next.route(protol);
+        } else {
+            Log.i(CustemProtolRouterManager.TAG, "protol " + protol + " not match");
         }
     }
 }

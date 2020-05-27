@@ -1,4 +1,4 @@
-package ChainOfResponsibility.simple;
+package ly.learn.ChainOfResponsibility.simple;
 
 public class ExecuterImpl extends ExecuterInter<RequestInter> {
 

@@ -1,4 +1,4 @@
-package ChainOfResponsibility.simple;
+package ly.learn.ChainOfResponsibility.simple;
 
 public class Controler {
     public static void main(String[] args) {
